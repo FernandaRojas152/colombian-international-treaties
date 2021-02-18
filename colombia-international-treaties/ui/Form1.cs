@@ -32,9 +32,25 @@ namespace colombia_international_treaties
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {   
-             dataGridView1.DataSource = dm.importData(DataManager.PATH);
+        {
+            
+        }
 
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                Title = "Select File"
+            };
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView1.DataSource = dm.importData(ofd.FileName);
+            }
         }
     }
 }
