@@ -38,6 +38,8 @@ namespace colombia_international_treaties
             this.upperBound = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.buttonString = new System.Windows.Forms.Button();
+            this.buttonNumber = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,23 +82,25 @@ namespace colombia_international_treaties
             // Box1
             // 
             this.Box1.FormattingEnabled = true;
-            this.Box1.Location = new System.Drawing.Point(212, 590);
+            this.Box1.Location = new System.Drawing.Point(93, 549);
             this.Box1.Name = "Box1";
             this.Box1.Size = new System.Drawing.Size(121, 21);
             this.Box1.TabIndex = 2;
+            this.Box1.SelectedIndexChanged += new System.EventHandler(this.Box1_SelectedIndexChanged);
             // 
             // Box2
             // 
             this.Box2.FormattingEnabled = true;
-            this.Box2.Location = new System.Drawing.Point(407, 590);
+            this.Box2.Location = new System.Drawing.Point(220, 549);
             this.Box2.Name = "Box2";
             this.Box2.Size = new System.Drawing.Size(121, 21);
             this.Box2.TabIndex = 3;
             this.Box2.Visible = false;
+            this.Box2.SelectedIndexChanged += new System.EventHandler(this.Box2_SelectedIndexChanged);
             // 
             // text1
             // 
-            this.text1.Location = new System.Drawing.Point(571, 590);
+            this.text1.Location = new System.Drawing.Point(93, 577);
             this.text1.Name = "text1";
             this.text1.Size = new System.Drawing.Size(100, 20);
             this.text1.TabIndex = 4;
@@ -104,23 +108,23 @@ namespace colombia_international_treaties
             // 
             // lowerBound
             // 
-            this.lowerBound.Location = new System.Drawing.Point(698, 591);
+            this.lowerBound.Location = new System.Drawing.Point(93, 577);
             this.lowerBound.Name = "lowerBound";
-            this.lowerBound.Size = new System.Drawing.Size(100, 20);
+            this.lowerBound.Size = new System.Drawing.Size(73, 20);
             this.lowerBound.TabIndex = 5;
             this.lowerBound.Visible = false;
             // 
             // upperBound
             // 
-            this.upperBound.Location = new System.Drawing.Point(833, 590);
+            this.upperBound.Location = new System.Drawing.Point(172, 577);
             this.upperBound.Name = "upperBound";
-            this.upperBound.Size = new System.Drawing.Size(100, 20);
+            this.upperBound.Size = new System.Drawing.Size(73, 20);
             this.upperBound.TabIndex = 6;
             this.upperBound.Visible = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(41, 561);
+            this.button1.Location = new System.Drawing.Point(12, 547);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -131,13 +135,34 @@ namespace colombia_international_treaties
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Title = "open";
+            // 
+            // buttonString
+            // 
+            this.buttonString.Location = new System.Drawing.Point(93, 603);
+            this.buttonString.Name = "buttonString";
+            this.buttonString.Size = new System.Drawing.Size(75, 23);
+            this.buttonString.TabIndex = 8;
+            this.buttonString.Text = "search";
+            this.buttonString.UseVisualStyleBackColor = true;
+            this.buttonString.Click += new System.EventHandler(this.buttonString_Click);
+            // 
+            // buttonNumber
+            // 
+            this.buttonNumber.Location = new System.Drawing.Point(93, 603);
+            this.buttonNumber.Name = "buttonNumber";
+            this.buttonNumber.Size = new System.Drawing.Size(75, 23);
+            this.buttonNumber.TabIndex = 10;
+            this.buttonNumber.Text = "search";
+            this.buttonNumber.UseVisualStyleBackColor = true;
+            this.buttonNumber.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1206, 749);
+            this.Controls.Add(this.buttonNumber);
+            this.Controls.Add(this.buttonString);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.upperBound);
             this.Controls.Add(this.lowerBound);
@@ -165,6 +190,8 @@ namespace colombia_international_treaties
         private System.Windows.Forms.TextBox upperBound;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button buttonString;
+        private System.Windows.Forms.Button buttonNumber;
     }
 }
 
