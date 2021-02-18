@@ -144,16 +144,18 @@ namespace colombia_international_treaties
             this.buttonString.TabIndex = 8;
             this.buttonString.Text = "search";
             this.buttonString.UseVisualStyleBackColor = true;
+            this.buttonString.Visible = false;
             this.buttonString.Click += new System.EventHandler(this.buttonString_Click);
             // 
             // buttonNumber
             // 
-            this.buttonNumber.Location = new System.Drawing.Point(93, 603);
+            this.buttonNumber.Location = new System.Drawing.Point(91, 603);
             this.buttonNumber.Name = "buttonNumber";
             this.buttonNumber.Size = new System.Drawing.Size(75, 23);
             this.buttonNumber.TabIndex = 10;
             this.buttonNumber.Text = "search";
             this.buttonNumber.UseVisualStyleBackColor = true;
+            this.buttonNumber.Visible = false;
             this.buttonNumber.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // Form1
