@@ -11,7 +11,7 @@ namespace colombia_international_treaties.model
     class DataManager
     { 
     
-          public const string PATH = @"C:\Users\usuario\Desktop\Proyecto integrador\colombian-international-treaties\colombia-international-treaties\data\Tratados_internacionales_de_Colombia.csv";
+          public const string PATH = @"c:\\data\Tratados_internacionales_de_Colombia.csv";
 
           private DataSet ds;
          
@@ -37,9 +37,9 @@ namespace colombia_international_treaties.model
                 */
            }
 
-          public DataView importData(string fileName)
+          public DataView importData(string line)
           {
-               String connection = string.Format("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = {0}; Extended Properties = 'Excel 12.0;'", fileName);
+               String connection = string.Format("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = {0}; Extended Properties = 'Excel 12.0;'", line);
               OleDbConnection connector = new OleDbConnection(connection);
               connector.Open();
               OleDbCommand query = new OleDbCommand("Select * from [Tratados_internacionales_de_Colombia$]", connector);

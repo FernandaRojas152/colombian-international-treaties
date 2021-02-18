@@ -31,6 +31,13 @@ namespace colombia_international_treaties
         {
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Box1 = new System.Windows.Forms.ComboBox();
+            this.Box2 = new System.Windows.Forms.ComboBox();
+            this.text1 = new System.Windows.Forms.TextBox();
+            this.lowerBound = new System.Windows.Forms.TextBox();
+            this.upperBound = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +49,7 @@ namespace colombia_international_treaties
             this.gmap.GrayScaleMode = false;
             this.gmap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gmap.LevelsKeepInMemmory = 5;
-            this.gmap.Location = new System.Drawing.Point(450, 12);
+            this.gmap.Location = new System.Drawing.Point(595, 12);
             this.gmap.MarkersEnabled = true;
             this.gmap.MaxZoom = 20;
             this.gmap.MinZoom = 2;
@@ -56,7 +63,7 @@ namespace colombia_international_treaties
             this.gmap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gmap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gmap.ShowTileGridLines = false;
-            this.gmap.Size = new System.Drawing.Size(552, 395);
+            this.gmap.Size = new System.Drawing.Size(599, 482);
             this.gmap.TabIndex = 0;
             this.gmap.Zoom = 2D;
             this.gmap.Load += new System.EventHandler(this.gmap_Load);
@@ -66,21 +73,84 @@ namespace colombia_international_treaties
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(417, 529);
+            this.dataGridView1.Size = new System.Drawing.Size(558, 529);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Box1
+            // 
+            this.Box1.FormattingEnabled = true;
+            this.Box1.Location = new System.Drawing.Point(212, 590);
+            this.Box1.Name = "Box1";
+            this.Box1.Size = new System.Drawing.Size(121, 21);
+            this.Box1.TabIndex = 2;
+            // 
+            // Box2
+            // 
+            this.Box2.FormattingEnabled = true;
+            this.Box2.Location = new System.Drawing.Point(407, 590);
+            this.Box2.Name = "Box2";
+            this.Box2.Size = new System.Drawing.Size(121, 21);
+            this.Box2.TabIndex = 3;
+            this.Box2.Visible = false;
+            // 
+            // text1
+            // 
+            this.text1.Location = new System.Drawing.Point(571, 590);
+            this.text1.Name = "text1";
+            this.text1.Size = new System.Drawing.Size(100, 20);
+            this.text1.TabIndex = 4;
+            this.text1.Visible = false;
+            // 
+            // lowerBound
+            // 
+            this.lowerBound.Location = new System.Drawing.Point(698, 591);
+            this.lowerBound.Name = "lowerBound";
+            this.lowerBound.Size = new System.Drawing.Size(100, 20);
+            this.lowerBound.TabIndex = 5;
+            this.lowerBound.Visible = false;
+            // 
+            // upperBound
+            // 
+            this.upperBound.Location = new System.Drawing.Point(833, 590);
+            this.upperBound.Name = "upperBound";
+            this.upperBound.Size = new System.Drawing.Size(100, 20);
+            this.upperBound.TabIndex = 6;
+            this.upperBound.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(63, 561);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "open";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Title = "open";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 641);
+            this.ClientSize = new System.Drawing.Size(1206, 749);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.upperBound);
+            this.Controls.Add(this.lowerBound);
+            this.Controls.Add(this.text1);
+            this.Controls.Add(this.Box2);
+            this.Controls.Add(this.Box1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.gmap);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -88,6 +158,13 @@ namespace colombia_international_treaties
 
         private GMap.NET.WindowsForms.GMapControl gmap;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox Box1;
+        private System.Windows.Forms.ComboBox Box2;
+        private System.Windows.Forms.TextBox text1;
+        private System.Windows.Forms.TextBox lowerBound;
+        private System.Windows.Forms.TextBox upperBound;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
