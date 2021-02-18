@@ -42,7 +42,7 @@ namespace colombia_international_treaties.model
                String connection = string.Format("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = {0}; Extended Properties = 'Excel 12.0;'", line);
               OleDbConnection connector = new OleDbConnection(connection);
               connector.Open();
-              OleDbCommand query = new OleDbCommand("Select * from [Tratados_internacionales_de_Colombia$]", connector);
+              OleDbCommand query = new OleDbCommand("Select * from [Worksheet$]", connector);
               OleDbDataAdapter adapter = new OleDbDataAdapter
                  {
                       SelectCommand = query
