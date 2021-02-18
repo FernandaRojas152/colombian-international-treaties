@@ -1,0 +1,13 @@
+C:\Users\Ferna\Downloads\colombia-international-treaties\colombia-international-treaties\bin\Debug\colombia-international-treaties.exe.config
+C:\Users\Ferna\Downloads\colombia-international-treaties\colombia-international-treaties\bin\Debug\colombia-international-treaties.exe
+C:\Users\Ferna\Downloads\colombia-international-treaties\colombia-international-treaties\bin\Debug\colombia-international-treaties.pdb
+C:\Users\Ferna\Downloads\colombia-international-treaties\colombia-international-treaties\bin\Debug\GMap.NET.Core.dll
+C:\Users\Ferna\Downloads\colombia-international-treaties\colombia-international-treaties\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\Ferna\Downloads\colombia-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.csprojAssemblyReference.cache
+C:\Users\Ferna\Downloads\colombia-international-treaties\colombia-international-treaties\obj\Debug\colombia_international_treaties.Form1.resources
+C:\Users\Ferna\Downloads\colombia-international-treaties\colombia-international-treaties\obj\Debug\colombia_international_treaties.Properties.Resources.resources
+C:\Users\Ferna\Downloads\colombia-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.csproj.GenerateResource.cache
+C:\Users\Ferna\Downloads\colombia-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.csproj.CoreCompileInputs.cache
+C:\Users\Ferna\Downloads\colombia-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.csproj.CopyComplete
+C:\Users\Ferna\Downloads\colombia-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.exe
+C:\Users\Ferna\Downloads\colombia-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.pdb
