@@ -40,7 +40,7 @@ namespace colombia_international_treaties
             this.gmap.GrayScaleMode = false;
             this.gmap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gmap.LevelsKeepInMemmory = 5;
-            this.gmap.Location = new System.Drawing.Point(247, 46);
+            this.gmap.Location = new System.Drawing.Point(194, 12);
             this.gmap.MarkersEnabled = true;
             this.gmap.MaxZoom = 20;
             this.gmap.MinZoom = 2;
@@ -54,7 +54,7 @@ namespace colombia_international_treaties
             this.gmap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gmap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gmap.ShowTileGridLines = false;
-            this.gmap.Size = new System.Drawing.Size(499, 361);
+            this.gmap.Size = new System.Drawing.Size(552, 395);
             this.gmap.TabIndex = 0;
             this.gmap.Zoom = 2D;
             this.gmap.Load += new System.EventHandler(this.gmap_Load);
