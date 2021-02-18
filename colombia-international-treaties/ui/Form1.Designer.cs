@@ -30,6 +30,8 @@ namespace colombia_international_treaties
         private void InitializeComponent()
         {
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gmap
@@ -40,7 +42,7 @@ namespace colombia_international_treaties
             this.gmap.GrayScaleMode = false;
             this.gmap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gmap.LevelsKeepInMemmory = 5;
-            this.gmap.Location = new System.Drawing.Point(194, 12);
+            this.gmap.Location = new System.Drawing.Point(450, 12);
             this.gmap.MarkersEnabled = true;
             this.gmap.MaxZoom = 20;
             this.gmap.MinZoom = 2;
@@ -59,14 +61,25 @@ namespace colombia_international_treaties
             this.gmap.Zoom = 2D;
             this.gmap.Load += new System.EventHandler(this.gmap_Load);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(417, 529);
+            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1026, 641);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.gmap);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -74,6 +87,7 @@ namespace colombia_international_treaties
         #endregion
 
         private GMap.NET.WindowsForms.GMapControl gmap;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
