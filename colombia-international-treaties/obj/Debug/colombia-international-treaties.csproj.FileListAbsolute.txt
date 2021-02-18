@@ -24,3 +24,16 @@ C:\Users\usuario\Source\Repos\colombian-international-treaties\colombia-internat
 C:\Users\usuario\Source\Repos\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.csproj.CopyComplete
 C:\Users\usuario\Source\Repos\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.exe
 C:\Users\usuario\Source\Repos\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.pdb
+C:\Users\usuario\Desktop\Proyecto integrador\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.csprojAssemblyReference.cache
+C:\Users\usuario\Desktop\Proyecto integrador\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia_international_treaties.Form1.resources
+C:\Users\usuario\Desktop\Proyecto integrador\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia_international_treaties.Properties.Resources.resources
+C:\Users\usuario\Desktop\Proyecto integrador\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.csproj.GenerateResource.cache
+C:\Users\usuario\Desktop\Proyecto integrador\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\Proyecto integrador\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.exe
+C:\Users\usuario\Desktop\Proyecto integrador\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.pdb
+C:\Users\usuario\Desktop\Proyecto integrador\colombian-international-treaties\colombia-international-treaties\bin\Debug\colombia-international-treaties.exe.config
+C:\Users\usuario\Desktop\Proyecto integrador\colombian-international-treaties\colombia-international-treaties\bin\Debug\colombia-international-treaties.exe
+C:\Users\usuario\Desktop\Proyecto integrador\colombian-international-treaties\colombia-international-treaties\bin\Debug\colombia-international-treaties.pdb
+C:\Users\usuario\Desktop\Proyecto integrador\colombian-international-treaties\colombia-international-treaties\bin\Debug\GMap.NET.Core.dll
+C:\Users\usuario\Desktop\Proyecto integrador\colombian-international-treaties\colombia-international-treaties\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\usuario\Desktop\Proyecto integrador\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.csproj.CopyComplete
