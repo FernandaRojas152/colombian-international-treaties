@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
@@ -114,7 +115,19 @@ namespace colombia_international_treaties
 
         private void buttonNumber_Click(object sender, EventArgs e)
         {
+            DataTable dt = dm.getDataSet().Tables[0];
+            int lower = Convert.ToInt32(lowerBound.Text);
+            int upper = Convert.ToInt32(upperBound.Text);
+            string column = Box1.SelectedItem.ToString();
 
+            if (lower < upper)
+            {
+                dt.DefaultView.RowFilter = Box1.SelectedItem+" >= "+lower+" AND "+Box1.SelectedItem+" <= "+upper;
+            }
+            else
+            {
+                DialogResult warning = MessageBox.Show("Upper bound should be higher than lower bound.", "Error", MessageBoxButtons.OKCancel);
+            }
         }
 
         private void clearStuff()
@@ -146,7 +159,7 @@ namespace colombia_international_treaties
                     markers.Markers.Add(marker00);
                 }
 
-            }*/
+            }**/
 
         }
     }
