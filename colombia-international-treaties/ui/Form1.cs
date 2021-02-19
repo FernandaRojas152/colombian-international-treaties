@@ -20,28 +20,23 @@ namespace colombia_international_treaties
         private DataManager dm;
 
         private List<PointLatLng> mark;
-        private List<PointLatLng> poly;
         private List<PointLatLng> point;
 
         GMapOverlay markers = new GMapOverlay("markers");
-        GMapOverlay polygons = new GMapOverlay("polygons");
 
         public Form1()
         {
             dm = new DataManager();
             InitializeComponent();
-
             mark = new List<PointLatLng>();
-            poly = new List<PointLatLng>();
         }
 
         private void gmap_Load(object sender, EventArgs e)
         {
-            gmap.MapProvider = GoogleMapProvider.Instance;  //Proveedor del servicio
+            gmap.MapProvider = GoogleMapProvider.Instance; 
             GMaps.Instance.Mode = AccessMode.ServerOnly;
             gmap.Position = new PointLatLng(3.42158, -76.5205);
             gmap.Overlays.Add(markers);
-            gmap.Overlays.Add(polygons);
         }
 
         private void setMarkers() 
@@ -54,20 +49,11 @@ namespace colombia_international_treaties
 
         }
 
-        private void setPolygons()
-        {
-            GMapPolygon polygon = new GMapPolygon(poly, "Polygon");
-
-            polygon.Fill = new SolidBrush(Color.FromArgb(50, Color.Black));
-            polygon.Stroke = new Pen(Color.Red, 1);
-
-            polygons.Polygons.Add(polygon);
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog
             {
+                Filter = "Excel | *.xls;*.xlsx;",
                 Title = "Select File"
             };
             if (ofd.ShowDialog() == DialogResult.OK)
@@ -80,12 +66,6 @@ namespace colombia_international_treaties
             {
                 Box1.Items.Add(column.ColumnName);
             }
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void Box1_SelectedIndexChanged(object sender, EventArgs e)
