@@ -150,5 +150,24 @@ namespace colombia_international_treaties
             upperBound.Clear();
             buttonNumber.Visible = false;
         }
+
+        private void marker_Click(object sender, EventArgs e)
+        {
+            /**foreach (string f in lista)
+            {
+                GeoCoderStatusCode statusCode;
+                PointLatLng? pointLatLng1 = OpenStreet4UMapProvider.Instance.GetPoint(f, out statusCode);
+
+
+                if (pointLatLng1 != null)
+                {
+                    GMapMarker marker00 = new GMarkerGoogle(new PointLatLng(pointLatLng1.Value.Lat, pointLatLng1.Value.Lng), GMarkerGoogleType.blue_dot);
+                    marker00.ToolTipText = f + "\n" + pointLatLng1.Value.Lat + "\n" + pointLatLng1.Value.Lng; // Esta linea es solo apariencia
+                    markers.Markers.Add(marker00);
+                }
+
+            }*/
+
+        }
     }
 }
