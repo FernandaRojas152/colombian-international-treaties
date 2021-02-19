@@ -1,7 +1,7 @@
 ﻿
 namespace colombia_international_treaties
 {
-    partial class Form1
+    partial class Database
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -170,7 +170,7 @@ namespace colombia_international_treaties
             this.marker.UseVisualStyleBackColor = true;
             this.marker.Click += new System.EventHandler(this.marker_Click);
             // 
-            // Form1
+            // Database
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -186,8 +186,8 @@ namespace colombia_international_treaties
             this.Controls.Add(this.Box1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.gmap);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Database";
+            this.Text = "Database treaties";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

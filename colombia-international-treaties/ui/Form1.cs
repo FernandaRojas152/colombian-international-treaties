@@ -16,7 +16,7 @@ using colombia_international_treaties.model;
 
 namespace colombia_international_treaties
 {
-    public partial class Form1 : Form
+    public partial class Database : Form
     {
         private DataManager dm;
 
@@ -25,7 +25,7 @@ namespace colombia_international_treaties
 
         GMapOverlay markers = new GMapOverlay("markers");
 
-        public Form1()
+        public Database()
         {
             dm = new DataManager();
             InitializeComponent();
@@ -146,7 +146,8 @@ namespace colombia_international_treaties
 
         private void marker_Click(object sender, EventArgs e)
         {
-            /**foreach (string f in lista)
+            DataTable dt = dm.getDataSet().Tables[0];
+            foreach (string f in lista)
             {
                 GeoCoderStatusCode statusCode;
                 PointLatLng? pointLatLng1 = OpenStreet4UMapProvider.Instance.GetPoint(f, out statusCode);
@@ -155,12 +156,11 @@ namespace colombia_international_treaties
                 if (pointLatLng1 != null)
                 {
                     GMapMarker marker00 = new GMarkerGoogle(new PointLatLng(pointLatLng1.Value.Lat, pointLatLng1.Value.Lng), GMarkerGoogleType.blue_dot);
-                    marker00.ToolTipText = f + "\n" + pointLatLng1.Value.Lat + "\n" + pointLatLng1.Value.Lng; // Esta linea es solo apariencia
+                    marker00.ToolTipText = f + "\n" + pointLatLng1.Value.Lat + "\n" + pointLatLng1.Value.Lng;
                     markers.Markers.Add(marker00);
                 }
 
-            }**/
-
+            }
         }
     }
 }
