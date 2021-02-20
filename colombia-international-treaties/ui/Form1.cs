@@ -147,19 +147,28 @@ namespace colombia_international_treaties
         private void marker_Click(object sender, EventArgs e)
         {
             DataTable dt = dm.getDataSet().Tables[0];
-            foreach (string f in lista)
+            List<string> cities = new List<string>();
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row[DataManager.LA] != DBNull.Value)
+                {
+                    cities.Add((string)row[DataManager.LA]);
+                }       
+            }
+            cities = cities.Distinct().ToList();
+            foreach (string city in cities)
             {
                 GeoCoderStatusCode statusCode;
-                PointLatLng? pointLatLng1 = OpenStreet4UMapProvider.Instance.GetPoint(f, out statusCode);
+                PointLatLng? pointLatLng1 = OpenStreet4UMapProvider.Instance.GetPoint(city, out statusCode);
 
 
                 if (pointLatLng1 != null)
                 {
                     GMapMarker marker00 = new GMarkerGoogle(new PointLatLng(pointLatLng1.Value.Lat, pointLatLng1.Value.Lng), GMarkerGoogleType.blue_dot);
-                    marker00.ToolTipText = f + "\n" + pointLatLng1.Value.Lat + "\n" + pointLatLng1.Value.Lng;
+                    marker00.ToolTipText = city + "\n" + pointLatLng1.Value.Lat + "\n" + pointLatLng1.Value.Lng;
                     markers.Markers.Add(marker00);
+                    Console.WriteLine(city);
                 }
-
             }
         }
     }
