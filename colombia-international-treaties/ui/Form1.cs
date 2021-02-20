@@ -21,12 +21,11 @@ namespace colombia_international_treaties
         private DataManager dm;
 
         private List<PointLatLng> mark;
-        private List<PointLatLng> point;
-
-        GMapOverlay markers = new GMapOverlay("markers");
+        GMapOverlay markers;
 
         public Database()
         {
+            markers = new GMapOverlay("markers");
             dm = new DataManager();
             InitializeComponent();
             mark = new List<PointLatLng>();
@@ -38,16 +37,6 @@ namespace colombia_international_treaties
             GMaps.Instance.Mode = AccessMode.ServerOnly;
             gmap.Position = new PointLatLng(3.42158, -76.5205);
             gmap.Overlays.Add(markers);
-        }
-
-        private void setMarkers() 
-        {
-            foreach (PointLatLng points in point)
-            {
-                GMapMarker marker = new GMarkerGoogle(points, GMarkerGoogleType.pink_dot);
-                markers.Markers.Add(marker);
-            }
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,6 +56,27 @@ namespace colombia_international_treaties
             {
                 Box1.Items.Add(column.ColumnName);
             }
+            generateChart();
+        }
+
+        private void generateChart()
+        {
+            chart1.Visible = true;
+            chart1.Titles.Add("Tipo de tratado (Bilateral y No Bilateral)");
+            DataTable dt = dm.getDataSet().Tables[0];
+            int bilateral = 0, noBilateral = 0;
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row[DataManager.BILATERAL] != DBNull.Value)
+                {
+                    if ("SI" == (string)row[DataManager.BILATERAL])
+                        bilateral++;
+                    else if ("NO" == (string)row[DataManager.BILATERAL])
+                        noBilateral++;
+                } 
+            }
+            chart1.Series["Cantidad por tipo de tratado"].Points.AddXY("SÍ", bilateral);
+            chart1.Series["Cantidad por tipo de tratado"].Points.AddXY("NO", noBilateral);
         }
 
         private void Box1_SelectedIndexChanged(object sender, EventArgs e)
@@ -174,7 +184,6 @@ namespace colombia_international_treaties
 
         private void clean_Click(object sender, EventArgs e)
         {
-            point.Clear();
             markers.Clear();
         }
     }
