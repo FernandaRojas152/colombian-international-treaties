@@ -83,7 +83,7 @@ namespace colombia_international_treaties
             // 
             this.Box1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Box1.FormattingEnabled = true;
-            this.Box1.Location = new System.Drawing.Point(93, 549);
+            this.Box1.Location = new System.Drawing.Point(93, 473);
             this.Box1.Name = "Box1";
             this.Box1.Size = new System.Drawing.Size(121, 21);
             this.Box1.TabIndex = 2;
@@ -93,7 +93,7 @@ namespace colombia_international_treaties
             // 
             this.Box2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Box2.FormattingEnabled = true;
-            this.Box2.Location = new System.Drawing.Point(220, 549);
+            this.Box2.Location = new System.Drawing.Point(220, 473);
             this.Box2.Name = "Box2";
             this.Box2.Size = new System.Drawing.Size(121, 21);
             this.Box2.TabIndex = 3;
@@ -102,7 +102,7 @@ namespace colombia_international_treaties
             // 
             // text1
             // 
-            this.text1.Location = new System.Drawing.Point(93, 577);
+            this.text1.Location = new System.Drawing.Point(93, 501);
             this.text1.Name = "text1";
             this.text1.Size = new System.Drawing.Size(100, 20);
             this.text1.TabIndex = 4;
@@ -110,7 +110,7 @@ namespace colombia_international_treaties
             // 
             // lowerBound
             // 
-            this.lowerBound.Location = new System.Drawing.Point(93, 577);
+            this.lowerBound.Location = new System.Drawing.Point(93, 501);
             this.lowerBound.Name = "lowerBound";
             this.lowerBound.Size = new System.Drawing.Size(73, 20);
             this.lowerBound.TabIndex = 5;
@@ -118,7 +118,7 @@ namespace colombia_international_treaties
             // 
             // upperBound
             // 
-            this.upperBound.Location = new System.Drawing.Point(172, 577);
+            this.upperBound.Location = new System.Drawing.Point(172, 501);
             this.upperBound.Name = "upperBound";
             this.upperBound.Size = new System.Drawing.Size(73, 20);
             this.upperBound.TabIndex = 6;
@@ -126,7 +126,7 @@ namespace colombia_international_treaties
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 547);
+            this.button1.Location = new System.Drawing.Point(12, 471);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -140,7 +140,7 @@ namespace colombia_international_treaties
             // 
             // buttonString
             // 
-            this.buttonString.Location = new System.Drawing.Point(93, 603);
+            this.buttonString.Location = new System.Drawing.Point(93, 527);
             this.buttonString.Name = "buttonString";
             this.buttonString.Size = new System.Drawing.Size(75, 23);
             this.buttonString.TabIndex = 8;
@@ -151,7 +151,7 @@ namespace colombia_international_treaties
             // 
             // buttonNumber
             // 
-            this.buttonNumber.Location = new System.Drawing.Point(91, 603);
+            this.buttonNumber.Location = new System.Drawing.Point(91, 527);
             this.buttonNumber.Name = "buttonNumber";
             this.buttonNumber.Size = new System.Drawing.Size(75, 23);
             this.buttonNumber.TabIndex = 10;
