@@ -56,10 +56,10 @@ namespace colombia_international_treaties
             {
                 Box1.Items.Add(column.ColumnName);
             }
-            generateChart();
+            generateChart1();
         }
 
-        private void generateChart()
+        private void generateChart1()
         {
             chart1.Visible = true;
             chart1.Titles.Add("Tipo de tratado (Bilateral y No Bilateral)");
@@ -77,6 +77,11 @@ namespace colombia_international_treaties
             }
             chart1.Series["Cantidad por tipo de tratado"].Points.AddXY("SÍ", bilateral);
             chart1.Series["Cantidad por tipo de tratado"].Points.AddXY("NO", noBilateral);
+        }
+
+        private void generateChart2()
+        {
+
         }
 
         private void Box1_SelectedIndexChanged(object sender, EventArgs e)
@@ -185,6 +190,11 @@ namespace colombia_international_treaties
         private void clean_Click(object sender, EventArgs e)
         {
             markers.Clear();
+        }
+
+        private void pie_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

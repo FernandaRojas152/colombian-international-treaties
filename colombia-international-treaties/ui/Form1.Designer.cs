@@ -33,6 +33,12 @@ namespace colombia_international_treaties
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Box1 = new System.Windows.Forms.ComboBox();
@@ -47,8 +53,12 @@ namespace colombia_international_treaties
             this.marker = new System.Windows.Forms.Button();
             this.clean = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pie = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pointC = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pointC)).BeginInit();
             this.SuspendLayout();
             // 
             // gmap
@@ -207,11 +217,50 @@ namespace colombia_international_treaties
             this.chart1.Titles.Add(title1);
             this.chart1.Visible = false;
             // 
+            // pie
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.pie.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.pie.Legends.Add(legend2);
+            this.pie.Location = new System.Drawing.Point(924, 527);
+            this.pie.Name = "pie";
+            this.pie.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.pie.Series.Add(series2);
+            this.pie.Size = new System.Drawing.Size(252, 201);
+            this.pie.TabIndex = 14;
+            this.pie.Text = "pie";
+            this.pie.Visible = false;
+            this.pie.Click += new System.EventHandler(this.pie_Click);
+            // 
+            // pointC
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.pointC.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.pointC.Legends.Add(legend3);
+            this.pointC.Location = new System.Drawing.Point(218, 538);
+            this.pointC.Name = "pointC";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.pointC.Series.Add(series3);
+            this.pointC.Size = new System.Drawing.Size(264, 171);
+            this.pointC.TabIndex = 15;
+            this.pointC.Text = "pointC";
+            this.pointC.Visible = false;
+            // 
             // Database
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1206, 749);
+            this.Controls.Add(this.pointC);
+            this.Controls.Add(this.pie);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.clean);
             this.Controls.Add(this.marker);
@@ -229,6 +278,8 @@ namespace colombia_international_treaties
             this.Text = "Database treaties";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pointC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,6 +301,8 @@ namespace colombia_international_treaties
         private System.Windows.Forms.Button marker;
         private System.Windows.Forms.Button clean;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart pie;
+        private System.Windows.Forms.DataVisualization.Charting.Chart pointC;
     }
 }
 
