@@ -229,7 +229,7 @@ namespace colombia_international_treaties
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series2.Legend = "Legend1";
-            series2.Name = "Series1";
+            series2.Name = "Nombre de pais";
             this.pie.Series.Add(series2);
             this.pie.Size = new System.Drawing.Size(252, 201);
             this.pie.TabIndex = 14;

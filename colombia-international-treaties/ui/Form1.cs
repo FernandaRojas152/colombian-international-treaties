@@ -57,6 +57,7 @@ namespace colombia_international_treaties
                 Box1.Items.Add(column.ColumnName);
             }
             generateChart1();
+            generateChart2();
         }
 
         private void generateChart1()
@@ -81,7 +82,29 @@ namespace colombia_international_treaties
 
         private void generateChart2()
         {
-
+            pie.Visible = true;
+            pie.Titles.Add("Paises que han realizado tratados");
+            DataTable dt = dm.getDataSet().Tables[0];
+            IDictionary<string, int> counts = new Dictionary<string, int>();
+            List<String> names = new List<string>();
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row[DataManager.LA] != DBNull.Value)
+                {
+                    names.Add((string)row[DataManager.LA]);
+                }
+            }
+            foreach (string value in names)
+            {
+                if (!counts.ContainsKey(value))
+                    counts.Add(value, 1);
+                else
+                    counts[value]++;
+            }
+            foreach (string value in counts.Keys)
+            {
+                pie.Series["Nombre de pais"].Points.AddXY(value.ToString(), counts[value]);
+            }
         }
 
         private void Box1_SelectedIndexChanged(object sender, EventArgs e)
