@@ -84,15 +84,15 @@ namespace colombia_international_treaties
         private void generateChart2()
         {
             pie.Visible = true;
-            pie.Titles.Add("Paises que han realizado tratados");
+            pie.Titles.Add("Vigencia");
             DataTable dt = dm.getDataSet().Tables[0];
             IDictionary<string, int> counts = new Dictionary<string, int>();
             List<String> names = new List<string>();
             foreach (DataRow row in dt.Rows)
             {
-                if (row[DataManager.LA] != DBNull.Value)
+                if (row[DataManager.VIGENTE] != DBNull.Value)
                 {
-                    names.Add((string)row[DataManager.LA]);
+                    names.Add((string)row[DataManager.VIGENTE]);
                 }
             }
             foreach (string value in names)
@@ -125,7 +125,7 @@ namespace colombia_international_treaties
                 }
             }
             pointC.Series["Variable Tratado"].Points.AddXY("Tratado", tratado);
-            pointC.Series["Variable Tratado"].Points.AddXY("ACuerdo", acuerdo);
+            pointC.Series["Variable Tratado"].Points.AddXY("Acuerdo", acuerdo);
         }
 
         private void Box1_SelectedIndexChanged(object sender, EventArgs e)
@@ -234,16 +234,6 @@ namespace colombia_international_treaties
         private void clean_Click(object sender, EventArgs e)
         {
             markers.Clear();
-        }
-
-        private void pie_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pointC_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

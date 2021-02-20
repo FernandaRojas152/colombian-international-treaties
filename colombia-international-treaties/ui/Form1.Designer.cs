@@ -189,7 +189,7 @@ namespace colombia_international_treaties
             // 
             // clean
             // 
-            this.clean.Location = new System.Drawing.Point(710, 471);
+            this.clean.Location = new System.Drawing.Point(690, 471);
             this.clean.Name = "clean";
             this.clean.Size = new System.Drawing.Size(75, 23);
             this.clean.TabIndex = 12;
@@ -203,7 +203,7 @@ namespace colombia_international_treaties
             this.chart1.ChartAreas.Add(chartArea4);
             legend4.Name = "Legend1";
             this.chart1.Legends.Add(legend4);
-            this.chart1.Location = new System.Drawing.Point(559, 500);
+            this.chart1.Location = new System.Drawing.Point(587, 500);
             this.chart1.Name = "chart1";
             series4.ChartArea = "ChartArea1";
             series4.Legend = "Legend1";
@@ -223,19 +223,19 @@ namespace colombia_international_treaties
             this.pie.ChartAreas.Add(chartArea5);
             legend5.Name = "Legend1";
             this.pie.Legends.Add(legend5);
-            this.pie.Location = new System.Drawing.Point(891, 473);
+            this.pie.Location = new System.Drawing.Point(919, 500);
             this.pie.Name = "pie";
             this.pie.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
             series5.ChartArea = "ChartArea1";
             series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series5.Label = "#PERCENT";
             series5.Legend = "Legend1";
             series5.Name = "Nombre de pais";
             this.pie.Series.Add(series5);
-            this.pie.Size = new System.Drawing.Size(303, 220);
+            this.pie.Size = new System.Drawing.Size(275, 193);
             this.pie.TabIndex = 14;
             this.pie.Text = "pie";
             this.pie.Visible = false;
-            this.pie.Click += new System.EventHandler(this.pie_Click);
             // 
             // pointC
             // 
@@ -243,7 +243,7 @@ namespace colombia_international_treaties
             this.pointC.ChartAreas.Add(chartArea6);
             legend6.Name = "Legend1";
             this.pointC.Legends.Add(legend6);
-            this.pointC.Location = new System.Drawing.Point(251, 501);
+            this.pointC.Location = new System.Drawing.Point(333, 501);
             this.pointC.Name = "pointC";
             this.pointC.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             series6.ChartArea = "ChartArea1";
@@ -251,11 +251,10 @@ namespace colombia_international_treaties
             series6.Legend = "Legend1";
             series6.Name = "Variable Tratado";
             this.pointC.Series.Add(series6);
-            this.pointC.Size = new System.Drawing.Size(302, 192);
+            this.pointC.Size = new System.Drawing.Size(248, 192);
             this.pointC.TabIndex = 15;
             this.pointC.Text = "pointC";
             this.pointC.Visible = false;
-            this.pointC.Click += new System.EventHandler(this.pointC_Click);
             // 
             // Database
             // 
