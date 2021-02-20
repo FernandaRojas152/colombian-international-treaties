@@ -56,10 +56,12 @@ namespace colombia_international_treaties
             {
                 Box1.Items.Add(column.ColumnName);
             }
-            generateChart();
+            generateChart1();
+            generateChart2();
+            generateChart3();
         }
 
-        private void generateChart()
+        private void generateChart1()
         {
             chart1.Visible = true;
             chart1.Titles.Add("Tipo de tratado (Bilateral y No Bilateral)");
@@ -77,6 +79,53 @@ namespace colombia_international_treaties
             }
             chart1.Series["Cantidad por tipo de tratado"].Points.AddXY("SÍ", bilateral);
             chart1.Series["Cantidad por tipo de tratado"].Points.AddXY("NO", noBilateral);
+        }
+
+        private void generateChart2()
+        {
+            pie.Visible = true;
+            pie.Titles.Add("Paises que han realizado tratados");
+            DataTable dt = dm.getDataSet().Tables[0];
+            IDictionary<string, int> counts = new Dictionary<string, int>();
+            List<String> names = new List<string>();
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row[DataManager.LA] != DBNull.Value)
+                {
+                    names.Add((string)row[DataManager.LA]);
+                }
+            }
+            foreach (string value in names)
+            {
+                if (!counts.ContainsKey(value))
+                    counts.Add(value, 1);
+                else
+                    counts[value]++;
+            }
+            foreach (string value in counts.Keys)
+            {
+                pie.Series["Nombre de pais"].Points.AddXY(value.ToString(), counts[value]);
+            }
+        }
+
+        private void generateChart3()
+        {
+            pointC.Visible = true;
+            pointC.Titles.Add("Analisis de tratado o acuerdo");
+            DataTable dt = dm.getDataSet().Tables[0];
+            int tratado = 0, acuerdo = 0;
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row[DataManager.NT] != DBNull.Value)
+                {
+                    if ("TRATADO" == (string)row[DataManager.NT])
+                        tratado++;
+                    else if ("ACUERDO PROCEDIMIENTO SIMPLIFICADO" == (string)row[DataManager.NT])
+                        acuerdo++;
+                }
+            }
+            pointC.Series["Variable Tratado"].Points.AddXY("Tratado", tratado);
+            pointC.Series["Variable Tratado"].Points.AddXY("ACuerdo", acuerdo);
         }
 
         private void Box1_SelectedIndexChanged(object sender, EventArgs e)
@@ -185,6 +234,16 @@ namespace colombia_international_treaties
         private void clean_Click(object sender, EventArgs e)
         {
             markers.Clear();
+        }
+
+        private void pie_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pointC_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
