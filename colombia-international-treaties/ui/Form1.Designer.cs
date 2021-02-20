@@ -41,6 +41,7 @@ namespace colombia_international_treaties
             this.buttonString = new System.Windows.Forms.Button();
             this.buttonNumber = new System.Windows.Forms.Button();
             this.marker = new System.Windows.Forms.Button();
+            this.clean = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,11 +171,22 @@ namespace colombia_international_treaties
             this.marker.UseVisualStyleBackColor = true;
             this.marker.Click += new System.EventHandler(this.marker_Click);
             // 
+            // clean
+            // 
+            this.clean.Location = new System.Drawing.Point(677, 501);
+            this.clean.Name = "clean";
+            this.clean.Size = new System.Drawing.Size(75, 23);
+            this.clean.TabIndex = 12;
+            this.clean.Text = "Clean";
+            this.clean.UseVisualStyleBackColor = true;
+            this.clean.Click += new System.EventHandler(this.clean_Click);
+            // 
             // Database
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1206, 749);
+            this.Controls.Add(this.clean);
             this.Controls.Add(this.marker);
             this.Controls.Add(this.buttonNumber);
             this.Controls.Add(this.buttonString);
@@ -208,6 +220,7 @@ namespace colombia_international_treaties
         private System.Windows.Forms.Button buttonString;
         private System.Windows.Forms.Button buttonNumber;
         private System.Windows.Forms.Button marker;
+        private System.Windows.Forms.Button clean;
     }
 }
 

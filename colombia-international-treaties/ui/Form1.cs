@@ -171,5 +171,11 @@ namespace colombia_international_treaties
                 }
             }
         }
+
+        private void clean_Click(object sender, EventArgs e)
+        {
+            point.Clear();
+            markers.Clear();
+        }
     }
 }
