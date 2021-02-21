@@ -221,17 +221,22 @@ namespace colombia_international_treaties
 
         private void showMarkers(List<string> cities, string value, DataTable dt)
         {
+            List<String> names = new List<String>();
             foreach (DataRow row in dt.Rows)
             {
                 if (row[Box1.SelectedItem.ToString()]!=DBNull.Value && row[DataManager.LA]!=DBNull.Value)
                 {
                     string rowString = (string)row[Box1.SelectedItem.ToString()];
                     if (rowString.IndexOf(value, StringComparison.CurrentCultureIgnoreCase) >= 0)
+                    {
                         cities.Add((string)row[DataManager.LA]);
+                        names.Add((string)row[Box1.SelectedItem.ToString()]);
+                    }
                 }
             }
             cities = cities.Distinct().ToList();
             markers.Clear();
+            int i = 0;
             foreach (string city in cities)
             {
                 GeoCoderStatusCode statusCode;
@@ -240,9 +245,10 @@ namespace colombia_international_treaties
                 if (pointLatLng1 != null)
                 {
                     GMapMarker marker00 = new GMarkerGoogle(new PointLatLng(pointLatLng1.Value.Lat, pointLatLng1.Value.Lng), GMarkerGoogleType.blue_dot);
-                    marker00.ToolTipText = city + "\n" + pointLatLng1.Value.Lat + "\n" + pointLatLng1.Value.Lng;
+                    marker00.ToolTipText = city + "\n" + names[i]  + "\n" + pointLatLng1.Value.Lat + "\n" + pointLatLng1.Value.Lng;
                     markers.Markers.Add(marker00);
                     Console.WriteLine(city);
+                    i++;
                 }
             }
         }
