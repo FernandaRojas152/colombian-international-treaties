@@ -113,9 +113,12 @@ namespace colombia_international_treaties
                 else
                     counts[value]++;
             }
+            int i = 0;
             foreach (string value in counts.Keys)
             {
                 pie.Series["Vigencia"].Points.AddXY(value.ToString(), counts[value]);
+                pie.Series["Vigencia"].Points[i].LegendText = value;
+                i++;
             }
         }
 
@@ -172,31 +175,33 @@ namespace colombia_international_treaties
         private void Box2_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataTable dt = dm.getDataSet().Tables[0];
-            string category = Box2.GetItemText(Box2.SelectedItem);
-            dt.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", Box1.SelectedItem, category);
+            string value = Box2.GetItemText(Box2.SelectedItem);
+            List<string> cities = new List<string>();       
+            dt.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", Box1.SelectedItem, value);
+            showMarkers(cities, value, dt);
         }
 
         private void buttonString_Click(object sender, EventArgs e)
         {
             DataTable dt = dm.getDataSet().Tables[0];
             string value = text1.Text;
+            List<string> cities = new List<string>();
             dt.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", Box1.SelectedItem, value);
+            showMarkers(cities, value, dt);
         }
 
         private void buttonNumber_Click(object sender, EventArgs e)
         {
             DataTable dt = dm.getDataSet().Tables[0];
             int lower = Convert.ToInt32(lowerBound.Text);
-            int upper = Convert.ToInt32(upperBound.Text);
-            string column = Box1.SelectedItem.ToString();
-
+            int upper = Convert.ToInt32(upperBound.Text);    
             if (lower < upper)
             {
                 dt.DefaultView.RowFilter = Box1.SelectedItem+" >= "+lower+" AND "+Box1.SelectedItem+" <= "+upper;
             }
             else
             {
-                DialogResult warning = MessageBox.Show("Upper bound should be higher than lower bound.", "Error", MessageBoxButtons.OKCancel);
+                MessageBox.Show("Upper bound should be higher than lower bound.", "Error", MessageBoxButtons.OKCancel);
             }
         }
 
@@ -214,41 +219,32 @@ namespace colombia_international_treaties
             buttonNumber.Visible = false;
         }
 
-        private void marker_Click(object sender, EventArgs e)
-        {   
-            List<string> cities = new List<string>();
-            
-            if (dm.getDataSet() != null)
+        private void showMarkers(List<string> cities, string value, DataTable dt)
+        {
+            foreach (DataRow row in dt.Rows)
             {
-                DataTable dt = dm.getDataSet().Tables[0];
-                foreach (DataRow row in dt.Rows)
+                if (row[Box1.SelectedItem.ToString()]!=DBNull.Value && row[DataManager.LA]!=DBNull.Value)
                 {
-                    if (row[DataManager.LA] != DBNull.Value)
-                    {
+                    string rowString = (string)row[Box1.SelectedItem.ToString()];
+                    if (rowString.IndexOf(value, StringComparison.CurrentCultureIgnoreCase) >= 0)
                         cities.Add((string)row[DataManager.LA]);
-                    }
-                }
-                cities = cities.Distinct().ToList();
-                foreach (string city in cities)
-                {
-                    GeoCoderStatusCode statusCode;
-                    PointLatLng? pointLatLng1 = OpenStreet4UMapProvider.Instance.GetPoint(city, out statusCode);
-
-
-                    if (pointLatLng1 != null)
-                    {
-                        GMapMarker marker00 = new GMarkerGoogle(new PointLatLng(pointLatLng1.Value.Lat, pointLatLng1.Value.Lng), GMarkerGoogleType.blue_dot);
-                        marker00.ToolTipText = city + "\n" + pointLatLng1.Value.Lat + "\n" + pointLatLng1.Value.Lng;
-                        markers.Markers.Add(marker00);
-                        Console.WriteLine(city);
-                    }
                 }
             }
-            else
+            cities = cities.Distinct().ToList();
+            markers.Clear();
+            foreach (string city in cities)
             {
-                DialogResult warning = MessageBox.Show("You need to upload a database first!", "Error", MessageBoxButtons.OKCancel);
+                GeoCoderStatusCode statusCode;
+                PointLatLng? pointLatLng1 = OpenStreet4UMapProvider.Instance.GetPoint(city, out statusCode);
+
+                if (pointLatLng1 != null)
+                {
+                    GMapMarker marker00 = new GMarkerGoogle(new PointLatLng(pointLatLng1.Value.Lat, pointLatLng1.Value.Lng), GMarkerGoogleType.blue_dot);
+                    marker00.ToolTipText = city + "\n" + pointLatLng1.Value.Lat + "\n" + pointLatLng1.Value.Lng;
+                    markers.Markers.Add(marker00);
+                    Console.WriteLine(city);
+                }
             }
-           
         }
 
         private void clean_Click(object sender, EventArgs e)
