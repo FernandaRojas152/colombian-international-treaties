@@ -217,9 +217,10 @@ namespace colombia_international_treaties
         private void marker_Click(object sender, EventArgs e)
         {   
             List<string> cities = new List<string>();
+            DataTable dt;
             try
             {
-                DataTable dt = dm.getDataSet().Tables[0];
+                dt = dm.getDataSet().Tables[0];
                 foreach (DataRow row in dt.Rows)
                 {
                     if (row[DataManager.LA] != DBNull.Value)
@@ -227,7 +228,21 @@ namespace colombia_international_treaties
                         cities.Add((string)row[DataManager.LA]);
                     }
                 }
-               
+                cities = cities.Distinct().ToList();
+                foreach (string city in cities)
+                {
+                    GeoCoderStatusCode statusCode;
+                    PointLatLng? pointLatLng1 = OpenStreet4UMapProvider.Instance.GetPoint(city, out statusCode);
+
+
+                    if (pointLatLng1 != null)
+                    {
+                        GMapMarker marker00 = new GMarkerGoogle(new PointLatLng(pointLatLng1.Value.Lat, pointLatLng1.Value.Lng), GMarkerGoogleType.blue_dot);
+                        marker00.ToolTipText = city + "\n" + pointLatLng1.Value.Lat + "\n" + pointLatLng1.Value.Lng;
+                        markers.Markers.Add(marker00);
+                        Console.WriteLine(city);
+                    }
+                }
             } catch (Exception ex)
             {
                 Console.WriteLine("File not loaded yet");
