@@ -217,21 +217,28 @@ namespace colombia_international_treaties
         private void marker_Click(object sender, EventArgs e)
         {   
             List<string> cities = new List<string>();
+            DataSet aux = dm.getDataSet();
             try
             {
-                DataTable dt = dm.getDataSet().Tables[0];
-                foreach (DataRow row in dt.Rows)
+                if (aux!=null)
                 {
-                    if (row[DataManager.LA] != DBNull.Value)
+                    DataTable dt = dm.getDataSet().Tables[0];
+                    foreach (DataRow row in dt.Rows)
                     {
-                        cities.Add((string)row[DataManager.LA]);
+                        if (row[DataManager.LA] != DBNull.Value)
+                        {
+                            cities.Add((string)row[DataManager.LA]);
+                        }
                     }
                 }
-               
+                else
+                {
+                    throw new Exception();
+                }
             } catch (Exception ex)
             {
-                Console.WriteLine("File not loaded yet");
-                Console.WriteLine(ex.ToString());
+                Console.WriteLine(ex.Message);
+                DialogResult errorData = MessageBox.Show("You need to upload a database first!", "Error", MessageBoxButtons.OK);
             }
         }
 
