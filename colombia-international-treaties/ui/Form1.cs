@@ -56,6 +56,17 @@ namespace colombia_international_treaties
             {
                 Box1.Items.Add(column.ColumnName);
             }
+            generateCharts();
+        }
+
+        private void generateCharts()
+        {
+            chart1.Series["Cantidad por tipo de tratado"].Points.Clear();
+            chart1.Titles.Clear();
+            pie.Series["Vigencia"].Points.Clear();
+            pie.Titles.Clear();
+            pointC.Series["Variable Tratado"].Points.Clear();
+            pointC.Titles.Clear();
             generateChart1();
             generateChart2();
             generateChart3();
@@ -104,7 +115,7 @@ namespace colombia_international_treaties
             }
             foreach (string value in counts.Keys)
             {
-                pie.Series["Nombre de pais"].Points.AddXY(value.ToString(), counts[value]);
+                pie.Series["Vigencia"].Points.AddXY(value.ToString(), counts[value]);
             }
         }
 
@@ -204,36 +215,66 @@ namespace colombia_international_treaties
         }
 
         private void marker_Click(object sender, EventArgs e)
-        {
-            DataTable dt = dm.getDataSet().Tables[0];
+        {   
             List<string> cities = new List<string>();
-            foreach (DataRow row in dt.Rows)
+            try
             {
-                if (row[DataManager.LA] != DBNull.Value)
+                DataTable dt = dm.getDataSet().Tables[0];
+                foreach (DataRow row in dt.Rows)
                 {
-                    cities.Add((string)row[DataManager.LA]);
-                }       
-            }
-            cities = cities.Distinct().ToList();
-            foreach (string city in cities)
-            {
-                GeoCoderStatusCode statusCode;
-                PointLatLng? pointLatLng1 = OpenStreet4UMapProvider.Instance.GetPoint(city, out statusCode);
-
-
-                if (pointLatLng1 != null)
-                {
-                    GMapMarker marker00 = new GMarkerGoogle(new PointLatLng(pointLatLng1.Value.Lat, pointLatLng1.Value.Lng), GMarkerGoogleType.blue_dot);
-                    marker00.ToolTipText = city + "\n" + pointLatLng1.Value.Lat + "\n" + pointLatLng1.Value.Lng;
-                    markers.Markers.Add(marker00);
-                    Console.WriteLine(city);
+                    if (row[DataManager.LA] != DBNull.Value)
+                    {
+                        cities.Add((string)row[DataManager.LA]);
+                    }
                 }
+               
+            } catch (Exception ex)
+            {
+                Console.WriteLine("File not loaded yet");
+                Console.WriteLine(ex.ToString());
             }
         }
 
         private void clean_Click(object sender, EventArgs e)
         {
             markers.Clear();
+        }
+
+        private void lowerBound_Enter(object sender, EventArgs e)
+        {
+            if (lowerBound.Text == "from")
+            {
+                lowerBound.Text = "";
+                lowerBound.ForeColor = Color.Black;
+            }
+                
+        }
+
+        private void lowerBound_Leave(object sender, EventArgs e)
+        {
+            if (lowerBound.Text == "")
+            {
+                lowerBound.Text = "from";
+                lowerBound.ForeColor = Color.Gray;
+            }
+        }
+
+        private void upperBound_Enter(object sender, EventArgs e)
+        {
+            if (upperBound.Text == "to")
+            {
+                upperBound.Text = "";
+                upperBound.ForeColor = Color.Black;
+            }
+        }
+
+        private void upperBound_Leave(object sender, EventArgs e)
+        {
+            if (upperBound.Text == "")
+            {
+                upperBound.Text = "to";
+                upperBound.ForeColor = Color.Gray;
+            }
         }
     }
 }

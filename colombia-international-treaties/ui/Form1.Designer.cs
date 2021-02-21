@@ -127,19 +127,29 @@ namespace colombia_international_treaties
             // 
             // lowerBound
             // 
+            this.lowerBound.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lowerBound.ForeColor = System.Drawing.Color.Gray;
             this.lowerBound.Location = new System.Drawing.Point(93, 501);
             this.lowerBound.Name = "lowerBound";
             this.lowerBound.Size = new System.Drawing.Size(73, 20);
             this.lowerBound.TabIndex = 5;
+            this.lowerBound.Text = "from";
             this.lowerBound.Visible = false;
+            this.lowerBound.Enter += new System.EventHandler(this.lowerBound_Enter);
+            this.lowerBound.Leave += new System.EventHandler(this.lowerBound_Leave);
             // 
             // upperBound
             // 
+            this.upperBound.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upperBound.ForeColor = System.Drawing.Color.Gray;
             this.upperBound.Location = new System.Drawing.Point(172, 501);
             this.upperBound.Name = "upperBound";
             this.upperBound.Size = new System.Drawing.Size(73, 20);
             this.upperBound.TabIndex = 6;
+            this.upperBound.Text = "to";
             this.upperBound.Visible = false;
+            this.upperBound.Enter += new System.EventHandler(this.upperBound_Enter);
+            this.upperBound.Leave += new System.EventHandler(this.upperBound_Leave);
             // 
             // button1
             // 
@@ -147,7 +157,7 @@ namespace colombia_international_treaties
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
-            this.button1.Text = "open";
+            this.button1.Text = "Open";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -172,7 +182,7 @@ namespace colombia_international_treaties
             this.buttonNumber.Name = "buttonNumber";
             this.buttonNumber.Size = new System.Drawing.Size(75, 23);
             this.buttonNumber.TabIndex = 10;
-            this.buttonNumber.Text = "search";
+            this.buttonNumber.Text = "Search";
             this.buttonNumber.UseVisualStyleBackColor = true;
             this.buttonNumber.Visible = false;
             this.buttonNumber.Click += new System.EventHandler(this.buttonNumber_Click);
@@ -183,7 +193,7 @@ namespace colombia_international_treaties
             this.marker.Name = "marker";
             this.marker.Size = new System.Drawing.Size(75, 23);
             this.marker.TabIndex = 11;
-            this.marker.Text = "marker";
+            this.marker.Text = "Marker";
             this.marker.UseVisualStyleBackColor = true;
             this.marker.Click += new System.EventHandler(this.marker_Click);
             // 
@@ -193,7 +203,7 @@ namespace colombia_international_treaties
             this.clean.Name = "clean";
             this.clean.Size = new System.Drawing.Size(75, 23);
             this.clean.TabIndex = 12;
-            this.clean.Text = "Clean";
+            this.clean.Text = "Clear";
             this.clean.UseVisualStyleBackColor = true;
             this.clean.Click += new System.EventHandler(this.clean_Click);
             // 
@@ -203,13 +213,13 @@ namespace colombia_international_treaties
             this.chart1.ChartAreas.Add(chartArea4);
             legend4.Name = "Legend1";
             this.chart1.Legends.Add(legend4);
-            this.chart1.Location = new System.Drawing.Point(587, 500);
+            this.chart1.Location = new System.Drawing.Point(573, 500);
             this.chart1.Name = "chart1";
             series4.ChartArea = "ChartArea1";
             series4.Legend = "Legend1";
             series4.Name = "Cantidad por tipo de tratado";
             this.chart1.Series.Add(series4);
-            this.chart1.Size = new System.Drawing.Size(326, 193);
+            this.chart1.Size = new System.Drawing.Size(340, 193);
             this.chart1.TabIndex = 13;
             this.chart1.Text = "chart1";
             this.chart1.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
@@ -230,7 +240,7 @@ namespace colombia_international_treaties
             series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series5.Label = "#PERCENT";
             series5.Legend = "Legend1";
-            series5.Name = "Nombre de pais";
+            series5.Name = "Vigencia";
             this.pie.Series.Add(series5);
             this.pie.Size = new System.Drawing.Size(275, 193);
             this.pie.TabIndex = 14;
@@ -243,7 +253,7 @@ namespace colombia_international_treaties
             this.pointC.ChartAreas.Add(chartArea6);
             legend6.Name = "Legend1";
             this.pointC.Legends.Add(legend6);
-            this.pointC.Location = new System.Drawing.Point(333, 501);
+            this.pointC.Location = new System.Drawing.Point(319, 501);
             this.pointC.Name = "pointC";
             this.pointC.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             series6.ChartArea = "ChartArea1";
