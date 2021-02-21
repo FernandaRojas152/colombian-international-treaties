@@ -217,10 +217,10 @@ namespace colombia_international_treaties
         private void marker_Click(object sender, EventArgs e)
         {   
             List<string> cities = new List<string>();
-            DataTable dt;
-            try
+            
+            if (dm.getDataSet() != null)
             {
-                dt = dm.getDataSet().Tables[0];
+                DataTable dt = dm.getDataSet().Tables[0];
                 foreach (DataRow row in dt.Rows)
                 {
                     if (row[DataManager.LA] != DBNull.Value)
@@ -243,11 +243,12 @@ namespace colombia_international_treaties
                         Console.WriteLine(city);
                     }
                 }
-            } catch (Exception ex)
-            {
-                Console.WriteLine("File not loaded yet");
-                Console.WriteLine(ex.ToString());
             }
+            else
+            {
+                DialogResult warning = MessageBox.Show("You need to upload a database first!", "Error", MessageBoxButtons.OKCancel);
+            }
+           
         }
 
         private void clean_Click(object sender, EventArgs e)
