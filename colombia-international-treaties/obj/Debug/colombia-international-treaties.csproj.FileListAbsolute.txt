@@ -47,6 +47,6 @@ C:\Users\Ferna\Downloads\colombian-international-treaties\colombia-international
 C:\Users\Ferna\Downloads\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.csproj.CopyComplete
 C:\Users\Ferna\Downloads\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.exe
 C:\Users\Ferna\Downloads\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia-international-treaties.pdb
-C:\Users\usuario\source\repos\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia_international_treaties.Database.resources
 C:\Users\Ferna\Downloads\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia_international_treaties.Database.resources
 C:\Users\usuario\Desktop\Proyecto integrador\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia_international_treaties.Database.resources
+C:\Users\usuario\source\repos\colombian-international-treaties\colombia-international-treaties\obj\Debug\colombia_international_treaties.UI.Database.resources

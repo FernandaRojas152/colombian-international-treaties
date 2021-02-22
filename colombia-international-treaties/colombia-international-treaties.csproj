@@ -94,17 +94,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="model\DataManager.cs" />
-    <Compile Include="ui\Form1.cs">
+    <Compile Include="Model\DataManager.cs" />
+    <Compile Include="UI\DataManagerWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ui\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="UI\DataManagerWindow.Designer.cs">
+      <DependentUpon>DataManagerWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="ui\Program.cs" />
+    <Compile Include="UI\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ui\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="UI\DataManagerWindow.resx">
+      <DependentUpon>DataManagerWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

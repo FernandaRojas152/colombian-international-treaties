@@ -1,5 +1,5 @@
 ﻿
-namespace colombia_international_treaties
+namespace colombia_international_treaties.UI
 {
     partial class Database
     {

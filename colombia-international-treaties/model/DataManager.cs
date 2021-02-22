@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.OleDb;
 
-namespace colombia_international_treaties.model
+namespace colombia_international_treaties.Model
 {
     class DataManager
     {

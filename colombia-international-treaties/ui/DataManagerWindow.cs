@@ -12,16 +12,16 @@ using System.Windows.Forms;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.MapProviders;
-using colombia_international_treaties.model;
+using colombia_international_treaties.Model;
 
-namespace colombia_international_treaties
+namespace colombia_international_treaties.UI
 {
     public partial class Database : Form
     {
         private DataManager dm;
 
         private List<PointLatLng> mark;
-        GMapOverlay markers;
+        private GMapOverlay markers;
 
         public Database()
         {
