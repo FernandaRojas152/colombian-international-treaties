@@ -1,4 +1,5 @@
-![map](https://user-images.githubusercontent.com/45322807/109253142-1d5b9e80-77bd-11eb-94f5-3e840c5da8da.jpg)
+![map](https://user-images.githubusercontent.com/45322807/109253311-82af8f80-77bd-11eb-93e8-de35e8867125.jpg)
+
 # Colombian International Treaties
 ## What is it?
 
