@@ -14,7 +14,9 @@ Credits to datos.gov.co for the database used here
 https://www.datos.gov.co/Estad-sticas-Nacionales/Tratados-internacionales-de-Colombia/fdir-hk5z
 
 ## Design and analysis
-
+PSP0: [***link***](https://github.com/FernandaRojas152/colombian-international-treaties/tree/master/colombia-international-treaties/PSP0) <br>
+Engineer design spanish: [***link***](https://github.com/FernandaRojas152/colombian-international-treaties/blob/master/colombia-international-treaties/Docs/METODO_INGENIERIA.pdf) <br>
+Engineer design english: [***link***](https://github.com/FernandaRojas152/colombian-international-treaties/blob/master/colombia-international-treaties/Docs/ENGINEERING_METHOD.pdf) <br>
 
 ## Video
 You can see a preview of the program here: [**link**](https://youtu.be/5S3NwC9RN5o)
