@@ -1,0 +1,15 @@
+#include <dataFile.txt>
+MessageDispatch_Handled/pdash.alterHierarchy/addPFA/2.2==1.0
+Monitore Banco/PSP0/Planning/Started=@1600528207061
+Monitore Banco/PSP0/Started=@1600528207061
+Monitore Banco/Started=@1600528207061
+Monitoreo Banco/Started=@1600639911103
+Monitoreo Banco/node==TAG
+No Proyecto/Time==0.0
+No Proyecto/leaf==TAG
+No Proyecto/node==TAG
+Non Project/node==TAG
+Orphaned Time==1860.0
+Proyecto/Time==0.0
+Proyecto/leaf==TAG
+Proyecto/node==TAG

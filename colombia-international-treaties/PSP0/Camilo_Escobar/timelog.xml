@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<timeLogEntries>
+  <time id="1" path="/Monitore Banco/PSP0/Planning" start="@1600528207061" delta="1860" />
+  <time id="2" path="/Monitoreo Banco/PSP0/Planning" start="@1600639911103" delta="166" />
+  <time id="3" path="/Monitoreo Banco/PSP0/Design" start="@1600745235135" delta="126" />
+  <time id="4" path="/Monitoreo Banco/PSP0/Design" start="@1600836711155" delta="4" />
+  <time id="5" path="/Monitoreo Banco/PSP0/Code" start="@1600836950035" delta="89" />
+  <time id="6" path="/Monitoreo Banco/PSP0/Design" start="@1600915027100" delta="299" />
+</timeLogEntries>

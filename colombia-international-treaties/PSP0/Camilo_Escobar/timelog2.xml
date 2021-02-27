@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<timeLogEntries>
+  <time id="7" path="/Monitoreo Banco/PSP0/Design" start="@1601410763370" delta="1036" flag="A" />
+  <time id="8" path="/Monitoreo Banco/PSP0/Design" start="@1601498608636" delta="48" flag="A" />
+  <time id="9" path="/Monitoreo Banco/PSP0/Code" start="@1601501505234" delta="187" flag="A" />
+  <time id="10" path="/Monitoreo Banco/PSP0/Design" start="@1601512745094" delta="215" flag="A" />
+  <time id="11" path="/Monitoreo Banco/PSP0/Code" start="@1601525655563" delta="10" flag="A" />
+</timeLogEntries>
